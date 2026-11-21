@@ -1,0 +1,31 @@
+import datetime
+
+first_name = input("Enter student first name: ")
+last_name = input("Enter student last name: ")
+section = input("Enter section: ")
+event_name = input("Enter event name: ")
+event_year = int(input("Enter event year: "))
+event_month = int(input("Enter event month: "))
+event_day = int(input("Enter event day: "))
+
+full_name = "{} {}".format(
+    first_name.strip().title(), last_name.strip().title()
+)
+name_code = full_name.upper()
+clean_section = section.strip().upper()
+clean_event = event_name.strip().title()
+event_date = datetime.date(event_year, event_month, event_day)
+formatted_date = "{} {}, {}".format(
+    event_date.strftime("%B"), event_date.day, event_date.year
+)
+
+print("Student Event Registration:")
+print(f"Name: {full_name}")
+print(f"Name Code: {name_code}")
+print(f"Section: {clean_section}")
+print(f"Event: {clean_event}")
+print(f"Event Date: {formatted_date}")
+print("Language Used: Python")
+print("String Feature Used: strip(), title(), upper(), format(), f-strings")
+print("Date/Time Feature Used: datetime")
+print("Registration record created successfully.")
